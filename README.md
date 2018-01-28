@@ -1,4 +1,21 @@
-# Semantic Segmentation
+Kamil Kaczmarczyk
+2018-01-28
+
+# Semantic Segmentation Project
+Self-Driving Car Engineer Nanodegree Program
+
+![alt tex](https://github.com/Kamil-K/CarND-Semantic-Segmentation/blob/master/runs/1517174204.4339643/um_000073.png "Semantic Segmentation 1")
+
+![alt tex](https://github.com/Kamil-K/CarND-Semantic-Segmentation/blob/master/runs/1517174204.4339643/um_000090.png "Semantic Segmentation 2")
+
+![alt tex](https://github.com/Kamil-K/CarND-Semantic-Segmentation/blob/master/runs/1517174204.4339643/umm_000007.png "Semantic Segmentation 3")
+
+![alt tex](https://github.com/Kamil-K/CarND-Semantic-Segmentation/blob/master/runs/1517174204.4339643/umm_000010.png "Semantic Segmentation 4")
+
+![alt tex](https://github.com/Kamil-K/CarND-Semantic-Segmentation/blob/master/runs/1517174204.4339643/umm_000028.png "Semantic Segmentation 5")
+
+![alt tex](https://github.com/Kamil-K/CarND-Semantic-Segmentation/blob/master/runs/1517174204.4339643/umm_000079.png "Semantic Segmentation 6")
+
 ### Introduction
 In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
 
