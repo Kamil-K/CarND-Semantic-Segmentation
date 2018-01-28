@@ -1,4 +1,4 @@
-iimport os.path
+import os.path
 import tensorflow as tf
 import helper
 import warnings
@@ -65,7 +65,7 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
 
     layer4_out_ = tf.add(layer4_in_1, layer4_in_2)
 
-    layer3_in_1 = tf.layers.conv2d_transpose(layer4_out_, num_classes, 4, strides=(2,2), padding='same', kernel_initializer=tf.random_normal_initializer(stddev=0.01), kernel_regularizer(1e-3))
+    layer3_in_1 = tf.layers.conv2d_transpose(layer4_out_, num_classes, 4, strides=(2,2), padding='same', kernel_initializer=tf.random_normal_initializer(stddev=0.01), kernel_regularizer=tf.contrib.layers.l2_regularizer(1e-3))
 
     layer3_in_2 = tf.layers.conv2d(vgg_layer3_out, num_classes, 1, padding='same', kernel_initializer=tf.random_normal_initializer(stddev=0.01), kernel_regularizer=tf.contrib.layers.l2_regularizer(1e-3))
 
@@ -158,11 +158,11 @@ def run():
 
         w1, keep, layer3_out, layer4_out, layer7_out = load_vgg(sess, vgg_path)
         nn_last_layer = layers(layer3_out, layer4_out, layer7_out, num_classes)
-	logits, train_op, cross_entropy_loss = optimize(nn_last_layer, correct_label, learning_rate, 2)
+        logits, train_op, cross_entropy_loss = optimize(nn_last_layer, correct_label, learning_rate, 2)
 
         # TODO: Train NN using the train_nn function
         sess.run(tf.global_variables_initializer())
-        train_nn(sess, epochs=20,batch_size=8,get_batches_fn,train_op,cross_entropy_loss,w1,correct_label,keep, learning_rate)
+        train_nn(sess, epochs=20,batch_size=8,get_batches_fn=get_batches_fn,train_op=train_op,cross_entropy_loss=cross_entropy_loss,input_image=w1,correct_label=correct_label,keep_prob=keep,learning_rate=learning_rate)
 
         # TODO: Save inference data using helper.save_inference_samples
         #  helper.save_inference_samples(runs_dir, data_dir, sess, image_shape, logits, keep_prob, input_image)
