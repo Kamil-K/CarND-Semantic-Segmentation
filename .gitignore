@@ -97,6 +97,7 @@ ENV/
 
 # mkdocs documentation
 /site
+local_readme.txt
 
 # mypy
 .mypy_cache/
